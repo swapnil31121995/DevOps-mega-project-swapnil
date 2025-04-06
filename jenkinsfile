@@ -16,7 +16,7 @@ pipeline{
         }
         stage("Checkout from SCM"){
             steps {
-                git branch: 'main', credentialsId: 'git', url: 'https://github.com/dmancloud/complete-prodcution-e2e-pipeline'
+                git branch: 'main', credentialsId: 'git', url: 'https://github.com/Devops1224789/Devops-Mega-project.git'
             }
 
         }
