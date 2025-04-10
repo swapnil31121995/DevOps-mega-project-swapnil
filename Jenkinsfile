@@ -8,7 +8,7 @@ pipeline{
     }
     
     environment {
-        APP_NAME = "devops-mega-project"
+        APP_NAME = "devops_mega_project"
         RELEASE = "1.0.0"
         DOCKER_USER = "mydevopsuser46"
         DOCKER_PASS = 'dockerhub'
