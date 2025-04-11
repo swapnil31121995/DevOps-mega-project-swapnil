@@ -109,7 +109,9 @@ pipeline{
 
         }
 
-        post {
+    }
+
+    post {
           success {
               emailext (
                   to: 'devopsstudy09@gmail.com',
@@ -128,6 +130,5 @@ pipeline{
         }
 
        }
-    }
 
 }
