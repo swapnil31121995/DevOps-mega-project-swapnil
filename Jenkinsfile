@@ -24,7 +24,7 @@ pipeline{
             }
 
         }
-        stage("test from SCM"){
+        stage("Checkout from SCM"){
             steps {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/Devops1224789/Devops-Mega-project.git'
             }
