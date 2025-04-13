@@ -13,7 +13,7 @@ pipeline{
         DOCKER_PASS = 'dockerhub'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-        // JENKINS_API_TOKEN = credentials("JENKINS_API_TOKEN")
+        JENKINS_API_TOKEN = credentials("JENKINS_API_TOKEN")
 
     }
 
@@ -110,24 +110,24 @@ pipeline{
 
     }
 
-    // post {
-    //       success {
-    //           emailext (
-    //               to: 'devopsstudy09@gmail.com',
-    //               subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-    //               body: """<p>Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' succeeded.</p><p>Check console output at <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>""",
-    //               mimeType: 'text/html'
-    //           )
-    //       }
-    //       failure {
-    //           emailext (
-    //               to: 'devopsstudy09@gmail.com',
-    //               subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-    //               body: """<p>Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' failed.</p><p>Check console output at <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>""",
-    //               mimeType: 'text/html'
-    //            )
-    //     }
+    post {
+          success {
+              emailext (
+                  to: 'devopsstudy09@gmail.com',
+                  subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                  body: """<p>Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' succeeded.</p><p>Check console output at <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>""",
+                  mimeType: 'text/html'
+              )
+          }
+          failure {
+              emailext (
+                  to: 'devopsstudy09@gmail.com',
+                  subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                  body: """<p>Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' failed.</p><p>Check console output at <a href='${env.BUILD_URL}'>${env.BUILD_URL}</a></p>""",
+                  mimeType: 'text/html'
+               )
+        }
 
-    //    }
+       }
 
 }
