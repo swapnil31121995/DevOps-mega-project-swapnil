@@ -15,7 +15,7 @@ pipeline {
 
         stage("Checkout from SCM"){
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Devops1224789/Devops-Mega-project.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/swapnil31121995/DevOps-mega-project-swapnil.git'
             }
 
         }
